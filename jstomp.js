@@ -14,7 +14,7 @@
                 heartbeat(ev.frames.headers);
             },
             message: function (ev) {
-                dispatch('onmessage', ev);
+                dispatch('onmessage', ev.frames);
                 var callback = subscriptions[ev.frames.headers.subscription];
                 if (typeof callback === "function") callback(ev.frames);
             },
